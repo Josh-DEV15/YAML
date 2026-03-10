@@ -33,3 +33,13 @@ jobs:
             echo "Newsletters section missing!"
             exit 3
           fi     
+      - name: Check JavaScript exists
+        run: test -f tooplate-musician-script.js
+
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Check JS syntax
+        run: node --check tooplate-musician-script.js
