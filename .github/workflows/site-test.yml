@@ -25,3 +25,11 @@ jobs:
             echo "Skills section missing!"
             exit 2
           fi 
+      - name: Check newsletter section
+        run: |
+         if grep -q '<section class="newsletter"' index.html; then 
+            echo "Newsletter section exists"
+          else
+            echo "Newsletters section missing!"
+            exit 3
+          fi     
