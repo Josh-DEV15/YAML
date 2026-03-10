@@ -9,11 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-    -name: Check hero section
-  run: |
-    if grep -q '<section class="hero"' index.html; then
-      echo "Hero section exists"
-    else
-      echo "Hero section missing!"
-      exit 1
-    fi
+      - name: Check hero section
+        run: |
+          if grep -q '<section class="hero"' index.html; then
+            echo "Hero section exists"
+          else
+            echo "Hero section missing!"
+            exit 1
+          fi
