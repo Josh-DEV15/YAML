@@ -17,3 +17,11 @@ jobs:
             echo "Hero section missing!"
             exit 1
           fi
+      - name: Check skills section
+        run: |
+         if grep -q '<section class="skills"' index.html; then 
+            echo "Skills section exists"
+          else
+            echo "Skills section missing!"
+            exit 2
+          fi 
